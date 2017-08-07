@@ -1,0 +1,92 @@
+p, h1, h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
+
+.page
+  background-color: rgba(255,255,255,.25)
+  padding: 20px
+  border-radius: 10px
+  width: 100%
+  height: 100%
+  display: block
+  transition: all 300ms ease-in-out
+  h1
+    color: rgba(255, 255, 255, .5)
+    font-size: 1.5rem
+    margin-bottom: 10px
+  h2
+    color: rgba(255, 255, 255, .5)
+    font-size: 1rem
+    margin-bottom: 10px
+
+input[type="text"]
+  padding: 10px
+  width: 200px
+  margin: 0
+  border: 0
+  width: 75%
+  border-radius: 10px 0 0 10px
+  font-size: 1rem
+
+.btn
+  font-size: 1rem
+  border: 0
+  margin: 0
+  padding: 10px
+  background-color: rgba(255,255,255,.25)
+  color: #fff
+  width: 25%
+  border-radius: 0 10px 10px 0
+  &:hover
+    cursor: pointer
+
+.translation
+  background-color: #eee
+  padding: 20px
+  margin-top: 20px
+  border-radius: 10px 10px 0 0
+  p
+    &:first-letter
+      text-transform: uppercase
+  &.piglatin
+    margin-top: 0
+    border-top: 1px solid #ccc
+    border-radius: 0 0 10px 10px
+
+.history
+  padding: 20px
+  margin: 20px 0 0 0
+  border-radius: 10px
+  background-color: rgba(0,0,0,.25)
+  &:empty
+    content: 'History will appear here...'
+    display: block
+    margin: 20px 0
+    background-color: red
+  h4
+    color: #ffffff
+  ol
+    margin: 0
+    padding: 0
+    li
+      transition: all 300ms ease-in-out
+      list-style: none
+      margin: 0
+      color: #ffffff
+      padding: 10px 0
+      border-top: 1px solid rgba(255,255,255,.5)
+      &:first-child
+        margin-top: 10px
+      &:first-letter
+        text-transform: uppercase
+
+.delete
+  border-radius: 50%
+  border: 0
+  padding: 5px
+  background-color: red
+  color: #fff
+  width: 20px
+  height: 20px
+  cursor: pointer
+  float: right

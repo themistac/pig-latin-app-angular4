@@ -1,0 +1,29 @@
+<div class="page">
+  <h1>Pig Latin Translation App</h1>
+  <h2>Created in Angular 4</h2>
+  <form (submit)="doTranslation(item.value)">
+  <input type="text" name="translate" placeholder="Enter words to translate..." #item><button type="submit" class="btn">Translate</button>
+  </form>
+
+  <div class="translation">
+    <h5>Your Word</h5>
+    <p>{{ translate || 'Your English word will appear here...' }}</p>
+  </div>
+
+  <div class="translation piglatin">
+    <h5>Piglatin Translation</h5>
+    <p>{{ piglatin | lowercase }}</p>
+  </div>
+
+  <div class="history">
+    <h4>Here are your last 10 translated phrases</h4>
+    <ol>
+      <ng-container *ngFor="let item of items | slice:0:10; let i = index">
+        <li *ngIf="i < 11">
+          {{item}} <button (click)="deleteHistoryItem(item)" class="delete">X</button>
+        </li>
+      </ng-container>
+    </ol>
+  </div>
+
+</div>

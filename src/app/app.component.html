@@ -3,7 +3,7 @@
   <h1>Pig Latin Translation App</h1>
   <h2>Created in Angular 4</h2>
   <form (submit)="doTranslation(item.value)">
-  <input type="text" name="translate" placeholder="Enter words to translate..." #item><button type="submit" class="btn">Translate</button>
+  <input type="text" id="translate" name="translate" placeholder="Enter words to translate..." [(ngModel)]="cleartranslate" #item><button type="submit" class="btn">Translate</button>
   </form>
 
   <div class="translation">

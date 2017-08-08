@@ -7,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-  translate:string;
-  piglatin:string;
-  words:string;
-  word:string;
-  output:string = '';
-  vowels:any = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-  pigWay:string = 'way';
-  pigAy:string = 'ay';
-  items:any = [];
+  translate: string;
+  cleartranslate: string;
+  piglatin: string;
+  words: string;
+  word: string;
+  output: string = '';
+  vowels: any = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  pigWay: string = 'way';
+  pigAy: string = 'ay';
+  items: any = [];
 
   constructor() {
 
@@ -23,11 +24,15 @@ export class AppComponent implements OnInit {
 
   doTranslation(sentence) {
     if(sentence) {
+      this.reset();
       this.translate = sentence;
       this.items.unshift(sentence);
       this.splitSentence(sentence);
     }
-    //return false;
+  }
+
+  reset() {
+    this.cleartranslate = '';
   }
 
   deleteHistoryItem(sentence) {
@@ -37,8 +42,6 @@ export class AppComponent implements OnInit {
       }
     }
   }
-
-
 
   splitSentence(sentence) {
     this.words = sentence.split(' ');

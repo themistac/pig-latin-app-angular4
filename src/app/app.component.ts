@@ -12,10 +12,10 @@ export class AppComponent implements OnInit {
   piglatin: string;
   words: string;
   word: string;
-  output: string = '';
+  output = '';
   vowels: any = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-  pigWay: string = 'way';
-  pigAy: string = 'ay';
+  pigWay = 'way';
+  pigAy = 'ay';
   items: any = [];
 
   constructor() {
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   doTranslation(sentence) {
-    if(sentence) {
+    if (sentence) {
       this.reset();
       this.translate = sentence;
       this.items.unshift(sentence);
@@ -36,8 +36,8 @@ export class AppComponent implements OnInit {
   }
 
   deleteHistoryItem(sentence) {
-    for(let i = 0; i <this.items.length; i++) {
-      if(this.items[i] == sentence){
+    for (let i = 0; i < this.items.length; i++) {
+      if (this.items[i] === sentence) {
         this.items.splice(i, 1);
       }
     }
@@ -47,30 +47,29 @@ export class AppComponent implements OnInit {
     this.words = sentence.split(' ');
     this.output = '';
     // loop through each word
-    for (var i = 0; i < this.words.length; i++) {
+    for (let i = 0; i < this.words.length; i++) {
       // translate each word
-      this.output += this.translatePigLatin(this.words[i]) + " ";
+      this.output += this.translatePigLatin(this.words[i]) + ' ';
     }
     this.piglatin = this.output;
 }
 
 
 translatePigLatin(word) {
-  var result = word.split('');
+  const result = word.split('');
 
-  if(word.match(/[aeiou]/gi)) {
+  if (word.match(/[aeiou]/gi)) {
 
     // check first character is a vowel
-    if(this.vowels.includes(word.charAt(0))) {
+    if (this.vowels.includes(word.charAt(0))) {
 
        // if first character is a vowel return the word and add 'way' on the end
        return word += this.pigWay;
-       }
 
-       else {
+       } else {
 
          // loop the length of the word
-         for (var i = 0; i < word.length; i++) {
+         for (let i = 0; i < word.length; i++) {
 
            // if not a vowel
            if (!this.vowels.includes(word[i])) {
@@ -88,12 +87,10 @@ translatePigLatin(word) {
              return result.join('');
            }
          }
-       }
-     }
-
-     else {
-       // no vowels so just return the word
-       return word;
+         }
+     } else {
+      // no vowels so just return the word
+      return word;
    }
 
 }
